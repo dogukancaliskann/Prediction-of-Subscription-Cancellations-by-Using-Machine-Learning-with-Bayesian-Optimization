@@ -21,7 +21,7 @@ library(dplyr)
 library(tidyr)
 
 
-data <- read.csv("C:/Users/dogukan1/Desktop/Membership woes.csv", header = TRUE,na.strings=c("","NA"),
+data <- read.csv("C:/Membership woes.csv", header = TRUE,na.strings=c("","NA"),
                  colClasses = c("character", "numeric", "numeric", "character", "character", "numeric", "character", 
                                 "character", "numeric", "numeric", "character", "character", "character", "character", "character"))
 
@@ -214,13 +214,13 @@ head(newdata)
 newdata2 <- newdata
 
 
-#Kategorilerin labelları 
+#Kategorilerin labellarÃ½ 
 get_labels(newdata2$MEMBER_GENDER) #4 tane
-get_labels(newdata2$MEMBER_MARITAL_STATUS) #Nişanlıya falan others dendi 5 tane var
+get_labels(newdata2$MEMBER_MARITAL_STATUS) #NiÃ¾anlÃ½ya falan others dendi 5 tane var
 get_labels(newdata2$MEMBER_OCCUPATION_CD) 
 get_labels(newdata2$MEMBERSHIP_PACKAGE)
 get_labels(newdata2$PAYMENT_MODE) #5
-get_labels(newdata2$START_MONTH) #12 ay faktör (aralık getir)
+get_labels(newdata2$START_MONTH) #12 ay faktÃ¶r (aralÃ½k getir)
 get_labels(newdata2$AGE_GROUP) #5
 get_labels(newdata2$TERM_GROUP) #6
 #target
@@ -379,15 +379,15 @@ newdata2$TERM_GROUP=f
 
 
 newdata2 <- newdata2 %>%
-  mutate(TARGET = ifelse(TARGET == "No",0,1)) #Target da dönüştü
+  mutate(TARGET = ifelse(TARGET == "No",0,1)) #Target da dÃ¶nÃ¼Ã¾tÃ¼
 
 
 
 
 
-mcar_test(newdata2[,c(1,4)]) #İkili dene
+mcar_test(newdata2[,c(1,4)]) #Ãkili dene
 
-#Pattern leri karşılaştır düzenlenmiş ve düzenlenmemiş verilerde
+#Pattern leri karÃ¾Ã½laÃ¾tÃ½r dÃ¼zenlenmiÃ¾ ve dÃ¼zenlenmemiÃ¾ verilerde
 aggr_plot_rawdata <- aggr(data, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, 
                           labels=names(data), cex.axis=.7, gap=3, 
                           ylab=c("Histogram of missing data in Raw Data","Pattern"))
@@ -401,7 +401,7 @@ aggr_plot_ <- aggr(newdata2, col=c('navyblue','red'), numbers=TRUE, sortVars=TRU
 
 
 
-#Mice İmputation
+#Mice Ãmputation
 
 
 mice_imputed <- data.frame(
@@ -435,7 +435,7 @@ plot_grid(h1, h2, h3, h4, nrow = 2, ncol = 3)
 
 
 
-#MissForest İmputation
+#MissForest Ãmputation
 library(missForest)
 
 
@@ -458,7 +458,7 @@ h6 <- ggplot(missForest_imputed, aes(x = imputed_missForest)) +
 
 plot_grid(h5, h6, nrow = 1)
 
-#PMM yi seçiyoruz.
+#PMM yi seÃ§iyoruz.
 
 
 aggr_plot_rawdata <- aggr(data, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, 
