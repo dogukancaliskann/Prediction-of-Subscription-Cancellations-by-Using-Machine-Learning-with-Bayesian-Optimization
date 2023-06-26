@@ -20,7 +20,7 @@ from catboost import CatBoostClassifier
 
 
 
-df = pd.read_excel(r"C:\Users\dogukan1\Desktop\newdata22.xlsx")
+df = pd.read_excel(r"C:\newdata22.xlsx")
 factor = ['MEMBER_MARITAL_STATUS','MEMBER_GENDER','MEMBER_OCCUPATION_CD','MEMBERSHIP_PACKAGE','PAYMENT_MODE',
           'AGE_GROUP','TERM_GROUP','TARGET','START_MONTH']
 
