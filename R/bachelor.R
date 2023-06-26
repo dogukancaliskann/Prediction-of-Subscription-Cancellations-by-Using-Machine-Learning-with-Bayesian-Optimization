@@ -474,7 +474,7 @@ aggr_plot_ <- aggr(newdata2, col=c('navyblue','red'), numbers=TRUE, sortVars=TRU
 
 
 
-write.csv(mice_imputed, "C:/Users/dogukan1/Desktop/miceimputed.csv", row.names=FALSE)
+write.csv(mice_imputed, "C:/miceimputed.csv", row.names=FALSE)
 
 
 
