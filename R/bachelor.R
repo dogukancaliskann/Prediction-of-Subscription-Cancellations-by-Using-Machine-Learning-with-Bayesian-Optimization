@@ -54,7 +54,7 @@ numeric_var <- names(df_data)[which(sapply(df_data, is.numeric))]
 print('Numeric Variables')
 print(numeric_var)
 
-# Variable Transformation and Creation #
+# Variable Transformation
 df_data$START_DATE..YYYYMMDD. <- as.Date(df_data[["START_DATE..YYYYMMDD."]],"%Y%m%d")
 df_data$END_DATE...YYYYMMDD. <- as.Date(df_data[["END_DATE...YYYYMMDD."]],"%Y%m%d")
 df_data$START_YEAR <- (year(df_data$START_DATE..YYYYMMDD.))
